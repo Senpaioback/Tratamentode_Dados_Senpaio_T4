@@ -1,6 +1,7 @@
 Execução:
 
 Abra o arquivo no Github onde se encontra o arquivo e o execute
+instale: Pandas e Numby
 
 Reflexão Teorica: 
 
