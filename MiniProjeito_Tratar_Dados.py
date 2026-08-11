@@ -57,7 +57,7 @@ linhas_antes_dup = len(df)
 df = df.drop_duplicates()
 duplicatas_removidas = lines_antes_dup = linhas_antes_dup - len(df)
 
-# 2. Validação da Regra do Identificador de Compra (Exigência do Critério 5)
+# 2. Validação da Regra do Identificador de Compra 
 # Remove registros onde o Identificador de Compra (CO_ID) é nulo ou vazio
 if "CO_ID" in df.columns:
     linhas_antes_validacao = len(df)
