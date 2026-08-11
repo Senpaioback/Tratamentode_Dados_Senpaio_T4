@@ -4,7 +4,7 @@ import csv
 import re
 
 # ==========================================================
-# SPRINT 1: LEITURA NATIVA COM csv.DictReader
+# LEITURA NATIVA COM csv.DictReader
 # ==========================================================
 dados_nativos = []
 with open("Base_Varejo.csv", mode="r", encoding="utf-8-sig") as arquivo:
@@ -26,7 +26,7 @@ print("\nValores nulos por coluna:")
 print(df.isnull().sum())
 
 # ==========================================================
-# SPRINT 2: TRATAMENTO COM REGEX
+# TRATAMENTO COM REGEX
 # ==========================================================
 def limpar_com_regex(valor):
     if pd.isna(valor) or str(valor).strip() == "":
@@ -49,7 +49,7 @@ if "CL_FHL" in df.columns:
     df["CL_FHL"] = pd.to_numeric(df["CL_FHL"], errors="coerce")
 
 # ==========================================================
-# SPRINT 3: LIMPEZA E TRATAMENTO DE DADOS (ETL + REGRAS)
+#LIMPEZA E TRATAMENTO DE DADOS (ETL + REGRAS)
 # ==========================================================
 
 # 1. Remover registros duplicados
@@ -68,7 +68,7 @@ if "CO_ID" in df.columns:
 else:
     compras_invalidas_removidas = 0
 
-# 3. Tratamento de categorias vazias utilizando lógica condicional (Exigência do Critério 4)
+# 3. Tratamento de categorias vazias utilizando lógica condicional 
 if "PR_CAT" in df.columns:
     # Lógica estruturada para mapear e substituir categorias vazias
     df["PR_CAT"] = df["PR_CAT"].apply(lambda x: "Sem Categoria" if pd.isna(x) or str(x).strip() == "" else str(x).strip())
@@ -89,7 +89,7 @@ df.to_csv('Varejo_Limpo.csv', sep=';', index=False)
 print("\nLimpeza concluída e arquivo 'Varejo_Limpo.csv' gerado!\n")
 
 # ==========================================================
-# SPRINT 4: ESTATÍSTICA DESCRITIVA (CL_FHL)
+#  ESTATÍSTICA DESCRITIVA 
 # ==========================================================
 print("==================================================")
 print("          ESTATÍSTICA DESCRITIVA (CL_FHL)        ")
@@ -110,7 +110,7 @@ if "CL_FHL" in df.columns:
     print(f"• Máximo       : {filhos.max()}")
 
 # ==========================================================
-# SPRINT 5: AGRUPAMENTO E RELATÓRIOS
+# AGRUPAMENTO E RELATÓRIOS
 # ==========================================================
 print("\n==================================================")
 print("             AGRUPAMENTO POR CATEGORIA            ")
